@@ -8,9 +8,11 @@ using Globomantics.Models;
 using Globomantics.Services;
 using Globomantics.Filters;
 using Globomantics.Conventions;
+using Globomantics.Middleware;
 
 namespace Globomantics.Controllers
 {
+    [MiddlewareFilter(typeof(BasicAuthConfig))]
     [ControllerVersion(Version = 1)]
     [RateExceptionFilter]
     [Route("api/rates")]
