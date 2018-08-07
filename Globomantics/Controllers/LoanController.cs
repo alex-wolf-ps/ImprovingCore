@@ -28,13 +28,8 @@ namespace Globomantics.Controllers
         [HttpPost]
         public IActionResult Application(LoanDetails app)
         {
-            if (ModelState.IsValid)
-            {
-                loanService.CreateLoanApplication(app, Guid.NewGuid().ToString());
-                return RedirectToAction("Employment");
-            }
-
-            return View(app);
+            loanService.CreateLoanApplication(app, Guid.NewGuid().ToString());
+            return RedirectToAction("Employment");
         }
 
         [HttpGet]

@@ -14,8 +14,8 @@
 }
 
 <p>After you complete this form you should receive an email with your quote shortly after. Please allow up to 1 hour to receive your quote.</p>
-    <hr class="featurette-divider-thin">
-<form asp-controller="Auto" asp-action="Index">
+<hr class="featurette-divider-thin">
+<form asp-controller="Auto" asp-action="Quote">
     <div class="form-group">
         <label asp-for="Make">Vehicle Make</label>
         <select asp-for="Make" class="form-control">
@@ -27,10 +27,12 @@
     <div class="form-group">
         <label asp-for="Year">Vehicle Year</label>
         <input asp-for="Year" type="text" class="form-control" placeholder="Year">
+        <span asp-validation-for="Year" class="error"></span>
     </div>
     <div class="form-group">
         <label asp-for="Price">Purchase Price</label>
         <input asp-for="Price" type="text" class="form-control" placeholder="Price">
+        <span asp-validation-for="Year" class="error"></span>
     </div>
     <div class="form-group">
         <label asp-for="Type">Vehicle Type</label>

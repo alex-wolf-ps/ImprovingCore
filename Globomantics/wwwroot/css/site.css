@@ -3,6 +3,10 @@
     padding-bottom: 20px;
 }
 
+.error {
+    color: red;
+}
+
 .nav-item a {
     color: #aaa;
 }

@@ -37,7 +37,7 @@ namespace Globomantics.Controllers
             if (ModelState.IsValid)
             {
                 quoteService.GenerateAutoQuote(quote);
-                return RedirectToAction("Index", "Insurance");
+                return RedirectToAction("Confirmation", "Insurance");
             }
             else
             {

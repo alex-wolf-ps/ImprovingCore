@@ -21,13 +21,14 @@ namespace Globomantics.Controllers
 
         public IActionResult Index()
         {
-            var homeData = new HomeVM();
+            var home = new HomeVM()
+            {
+                MortgageRates = rateService.GetMortgageRates(),
+                CDRates = rateService.GetCDRates(),
+                CreditCardRates = rateService.GetCreditCardRates()
+            };
 
-            homeData.CDRates = rateService.GetCDRates();
-            homeData.CreditCardRates = rateService.GetCreditCardRates();
-            homeData.MortgageRates = rateService.GetMortgageRates();
-
-            return View(homeData);
+            return View(home);
         }
 
         public IActionResult About()

@@ -25,14 +25,13 @@ namespace Globomantics
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddTransient<IDocumentService, DocumentService>();
             services.AddSingleton<ILoanService, LoanService>();
             services.AddTransient<IQuoteService, QuoteService>();
             services.AddTransient<IFeatureService, FeatureService>();
             services.AddTransient<IRateService, RateService>();
-            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
 
             services.AddDistributedMemoryCache();
-
             services.AddSession(options =>
             {
                 options.Cookie.HttpOnly = true;
