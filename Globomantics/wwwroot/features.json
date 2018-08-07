@@ -1,5 +1,5 @@
 ﻿{
-  "Loan": false,
+  "Loan": true,
   "Insurance": true,
   "Resources":  true
 }

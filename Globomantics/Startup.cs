@@ -29,11 +29,11 @@ namespace Globomantics
             {
                 options.Filters.Add(typeof(ModelValidationFilter));
             });
-            services.AddTransient<IDocumentService, DocumentService>();
+            services.AddScoped<IDocumentService, DocumentService>();
             services.AddSingleton<ILoanService, LoanService>();
-            services.AddTransient<IQuoteService, QuoteService>();
-            services.AddTransient<IFeatureService, FeatureService>();
-            services.AddTransient<IRateService, RateService>();
+            services.AddScoped<IQuoteService, QuoteService>();
+            services.AddScoped<IFeatureService, FeatureService>();
+            services.AddScoped<IRateService, RateService>();
 
             services.AddDistributedMemoryCache();
             services.AddSession(options =>

@@ -47,19 +47,19 @@
     <tbody>
         <tr>
             <th scope="row">Employment Type</th>
-            <td asp-for="">@Model.EmploymentInfo.Type</td>
+            <td asp-for="">@Model.EmploymentInfo.CurrentType</td>
         </tr>
         <tr>
             <th scope="row">Employer</th>
-            <td>@Model.EmploymentInfo.EmployerName</td>
+            <td>@Model.EmploymentInfo.CurrentEmployerName</td>
         </tr>
         <tr>
             <th scope="row">Income</th>
-            <td>@Model.EmploymentInfo.AnnualIncome</td>
+            <td>@Model.EmploymentInfo.CurrentAnnualIncome</td>
         </tr>
         <tr>
             <th scope="row">Length of Employment</th>
-            <td>@Model.EmploymentInfo.Duration</td>
+            <td>@Model.EmploymentInfo.CurrentDuration</td>
         </tr>
     </tbody>
 </table>
@@ -69,7 +69,7 @@
     <tbody>
         <tr>
             <th scope="row">First Name</th>
-            <td asp-for="">@Model.PersonalInfo.FirstName</td>
+            <td>@Model.PersonalInfo.FirstName</td>
         </tr>
         <tr>
             <th scope="row">Last Name</th>
@@ -107,5 +107,5 @@
 </table>
 
 <div class="form-group">
-    <button class="btn btn-primary float-right">Confirm & Submit</button>
+    <a asp-controller="Loan" asp-action="Success" class="btn btn-primary float-right">Confirm & Submit</a>
 </div>

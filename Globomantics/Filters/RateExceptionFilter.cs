@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Globomantics.Filters
 {
-    public class RateExceptionFilter : ExceptionFilterAttribute
+    public class RateExceptionFilter : ExceptionFilterAttribute, IResourceFilter
     {
         public override void OnException(ExceptionContext context)
         {
@@ -15,6 +15,16 @@ namespace Globomantics.Filters
             {
                 context.Result = new StatusCodeResult(504);
             }
+        }
+
+        public void OnResourceExecuted(ResourceExecutedContext context)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnResourceExecuting(ResourceExecutingContext context)
+        {
+            throw new NotImplementedException();
         }
     }
 }

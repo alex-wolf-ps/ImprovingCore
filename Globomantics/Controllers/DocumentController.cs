@@ -8,7 +8,6 @@ using Globomantics.Models;
 using Globomantics.Services;
 using System.Text;
 using System.IO;
-using Globomantics.Attributes;
 
 namespace Globomantics.Controllers
 {

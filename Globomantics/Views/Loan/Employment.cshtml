@@ -24,6 +24,8 @@
 <form method="post" asp-controller="Loan" asp-action="Employment">
     <hr class="featurette-divider-thin">
 
+    @Html.ValidationSummary()
+
     <div class="form-group">
         <label>Current Employment Type</label>
         <select asp-for="CurrentType" class="form-control">
@@ -44,7 +46,7 @@
     <div class="form-group">
         <label>Length of Time at Current Employer</label>
         <select id="employmentLength" asp-for="CurrentDuration" class="form-control">
-            <option value="1">Select</option>
+            <option value="Select">Select</option>
             <option value="1">Less Than 2 Years</option>
             <option value="3">2-5 Years</option>
             <option value="5">5+ Years</option>
@@ -75,7 +77,11 @@
         </div>
         <div class="form-group">
             <label>Length of Time at Previous Employer</label>
-            <input asp-for="PreviousDuration" type="text" class="form-control" placeholder="Employment Duration">
+            <select id="previousEmploymentLength" asp-for="PreviousDuration" class="form-control">
+                <option value="1">Less Than 2 Years</option>
+                <option value="3">2-5 Years</option>
+                <option value="5">5+ Years</option>
+            </select>
         </div>
     </div>
     <div class="form-group">

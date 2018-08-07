@@ -8,16 +8,16 @@ namespace Globomantics.Models
 {
     public class LoanDetails
     {
-        [Required]
+        [Required(ErrorMessage = "Loan Type is required")]
         public string Type { get; set; }
 
-        [Required]
-        public double Amount { get; set; }
+        [Required(ErrorMessage = "Amount is required")]
+        public double? Amount { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Term Length is required")]
         public int TermLength { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Secured info is required")]
         public bool IsSecured { get; set; }
     }
 }
