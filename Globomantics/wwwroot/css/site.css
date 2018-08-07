@@ -1,0 +1,66 @@
+﻿body {
+    padding-top: 30px !important;
+    padding-bottom: 20px;
+}
+
+.nav-item a {
+    color: #aaa;
+}
+
+.jumbotron-green {
+    background-color:#28a745;
+    color: white;
+}
+
+.jumbotron-blue {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.jumbotron-yellow {
+    background-color: #ffc107;
+    color: white;
+}
+
+.featurette-divider-thin {
+    margin: 2rem 0 !important;
+}
+
+.featurette-divider {
+    margin: 3rem 0 !important;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.meter {
+    margin: 10px 0 25px 0;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}

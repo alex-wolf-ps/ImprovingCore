@@ -1,0 +1,46 @@
+﻿@section Banner {
+    <div class="jumbotron jumbotron-fluid jumbotron-blue">
+        <div class="container">
+            <h1 class="display-4">Knowledge is Power</h1>
+            <p class="lead">We offer you the tools and education you need to succeed.</p>
+        </div>
+    </div>
+}
+
+@section SideNav {
+    @Html.Partial("LeftNav")
+}
+
+    <h2>Life Insurance</h2>
+    <p>Nothing is more important to protect than the ones you love. Make sure they're taken care of...for life.</p>
+    <form>
+        <hr class="featurette-divider-thin">
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Coverage Amount</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Coverage Amount">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Employment Type</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>Full Time</option>
+                <option>Part Time</option>
+                <option>Contract</option>
+                <option>Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Annual Income</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Annual Income">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Occupation</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Occupation">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Age</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Age">
+        </div>
+
+        @Html.Partial("Person")
+    </form>

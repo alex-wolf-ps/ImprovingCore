@@ -1,0 +1,111 @@
+﻿@model LoanApplication
+
+@section Banner {
+    <div class="jumbotron jumbotron-fluid jumbotron-blue">
+        <div class="container">
+            <h1 class="display-4">Confirmation</h1>
+            <p class="lead">Your loan is just a click away.</p>
+        </div>
+    </div>
+}
+
+@section SideNav {
+    <p class="lead">Loan Application Progress</p>
+    <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action" disabled>Loan Info</button>
+        <button type="button" class="list-group-item list-group-item-action" disabled>Employment Info</button>
+        <button type="button" class="list-group-item list-group-item-action">Personal Info</button>
+        <button type="button" class="list-group-item list-group-item-action active" disabled>Confirmation</button>
+    </div>
+}
+<h2>Summary</h2>
+<hr class="featurette-divider-thin">
+<p class="lead">Loan Details</p>
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th scope="row">Loan Type</th>
+            <td asp-for="">@Model.LoanInfo.Type</td>
+        </tr>
+        <tr>
+            <th scope="row">Loan Amount</th>
+            <td>@Model.LoanInfo.Amount</td>
+        </tr>
+        <tr>
+            <th scope="row">Term Length</th>
+            <td>@Model.LoanInfo.TermLength</td>
+        </tr>
+        <tr>
+            <th scope="row">Is Secured</th>
+            <td>@Model.LoanInfo.IsSecured</td>
+        </tr>
+    </tbody>
+</table>
+<hr class="featurette-divider-thin">
+<p class="lead">Employment Details</p>
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th scope="row">Employment Type</th>
+            <td asp-for="">@Model.EmploymentInfo.Type</td>
+        </tr>
+        <tr>
+            <th scope="row">Employer</th>
+            <td>@Model.EmploymentInfo.EmployerName</td>
+        </tr>
+        <tr>
+            <th scope="row">Income</th>
+            <td>@Model.EmploymentInfo.AnnualIncome</td>
+        </tr>
+        <tr>
+            <th scope="row">Length of Employment</th>
+            <td>@Model.EmploymentInfo.Duration</td>
+        </tr>
+    </tbody>
+</table>
+<hr class="featurette-divider-thin">
+<p class="lead">Personal Details</p>
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th scope="row">First Name</th>
+            <td asp-for="">@Model.PersonalInfo.FirstName</td>
+        </tr>
+        <tr>
+            <th scope="row">Last Name</th>
+            <td>@Model.PersonalInfo.LastName</td>
+        </tr>
+        <tr>
+            <th scope="row">Date of Birth</th>
+            <td>@Model.PersonalInfo.Dob</td>
+        </tr>
+        <tr>
+            <th scope="row">Email</th>
+            <td>@Model.PersonalInfo.Email</td>
+        </tr>
+        <tr>
+            <th scope="row">Phone</th>
+            <td>@Model.PersonalInfo.Phone</td>
+        </tr>
+        <tr>
+            <th scope="row">Address</th>
+            <td>@Model.PersonalInfo.Street</td>
+        </tr>
+        <tr>
+            <th scope="row">City</th>
+            <td>@Model.PersonalInfo.City</td>
+        </tr>
+        <tr>
+            <th scope="row">State</th>
+            <td>@Model.PersonalInfo.State</td>
+        </tr>
+        <tr>
+            <th scope="row">Zip</th>
+            <td>@Model.PersonalInfo.Zip</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="form-group">
+    <button class="btn btn-primary float-right">Confirm & Submit</button>
+</div>

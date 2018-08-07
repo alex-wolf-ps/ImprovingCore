@@ -1,0 +1,33 @@
+﻿@section Banner {
+    <banner title="Insurance" sub-title="Protect what's important to you." background-color="green"></banner>
+}
+
+@section SideNav {
+    @Html.Partial("LeftNav")
+}
+
+<h2>Have a question? We have answers.</h2>
+<p>We offer a range of insurance services to protect everything you value.  From property to medical - we have you covered at the best rates.   Have a general inquiry? Let us know below</p>
+<form asp-action="inquiry" asp-controller="insurance">
+    <div class="form-group">
+        <label>Name*</label>
+        <input type="text" class="form-control" placeholder="Name" />
+    </div>
+    <div class="form-group">
+        <label>Email*</label>
+        <input type="text" class="form-control" placeholder="Email" />
+    </div>
+    <div class="form-group">
+        <label>Phone</label>
+        <input type="text" class="form-control" placeholder="Phone" />
+    </div>
+    <div class="form-group">
+        <label>Message*</label>
+        <textarea class="form-control" rows="7" style="width: 100%" placeholder="Let us know what's on your mind...."></textarea>
+    </div>
+    <div class="lead">* Denotes required field</div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary float-right">Submit</button>
+    </div>
+</form>
+

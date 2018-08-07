@@ -1,0 +1,61 @@
+﻿@model LoanDetails
+
+    @section Banner {
+        <div class="jumbotron jumbotron-fluid jumbotron-blue">
+            <div class="container">
+                <h1 class="display-4">Request a Loan</h1>
+                <p class="lead">Kickstart your dream today.</p>
+            </div>
+        </div>
+    }
+
+    @section SideNav {
+        <p class="lead">Loan Application Progress</p>
+        <div class="list-group">
+            <button type="button" class="list-group-item list-group-item-action active">Loan Info</button>
+            <button type="button" class="list-group-item list-group-item-action" disabled>Employment Info</button>
+            <button type="button" class="list-group-item list-group-item-action" disabled>Personal Info</button>
+            <button type="button" class="list-group-item list-group-item-action" disabled>Confirmation</button>
+        </div>
+    }
+
+    <h2>Loan Details</h2>
+    <p>Let us know what type of loan you're looking for.</p>
+    <form method="post" asp-controller="Loan" asp-action="Application">
+        <hr class="featurette-divider-thin">
+
+        <div class="form-group">
+            <label asp-for="Type">Loan Type</label>
+            <select asp-for="Type" class="form-control">
+                <option>Auto Loan</option>
+                <option>Personal Loan</option>
+                <option>School Loan</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label asp-validation-for="Amount" asp-for="Amount">Loan Amount</label>
+            <input asp-for="Amount" type="text" class="form-control" placeholder="Loan Amount">
+            <span asp-validation-for="Amount" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="TermLength">Desired Term Length (Months)</label>
+            <select asp-for="TermLength" class="form-control">
+                <option>12</option>
+                <option>24</option>
+                <option>36</option>
+                <option>48</option>
+                <option>60</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label asp-for="IsSecured">Will the Loan be Secured with Collateral?</label>
+            <select asp-for="IsSecured" class="form-control">
+                <option>True</option>
+                <option>False</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary float-right">Next</button>
+        </div>
+    </form>

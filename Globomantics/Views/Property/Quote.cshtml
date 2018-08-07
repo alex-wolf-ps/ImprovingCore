@@ -1,0 +1,44 @@
+﻿@section Banner {
+    <div class="jumbotron jumbotron-fluid jumbotron-blue">
+        <div class="container">
+            <h1 class="display-4">Property Insurance</h1>
+            <p class="lead">Protect your home.</p>
+        </div>
+    </div>
+}
+
+@section SideNav {
+    @Html.Partial("LeftNav")
+}
+<p>After you complete this form you should receive an email with your quote shortly after. Please allow up to 1 hour to receive your quote.</p>
+
+<form>
+    <hr class="featurette-divider-thin">
+
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Property Type</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+            <option>Primary Residence</option>
+            <option>Rental</option>
+            <option>Vacation</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Monthly Rent</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Monthly Rent">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Year Built</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Year Built">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Number of Residents</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Residents">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Area Code</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Area Code">
+    </div>
+
+    @Html.Partial("Person")
+</form>

@@ -1,0 +1,14 @@
+﻿@model Person
+
+<form asp-controller="Person" asp-action="Create">
+    <div class="form-group">
+        <input asp-for="FirstName" type="text" />
+    </div>
+    <div class="form-group">
+        <input asp-for="LastName" type="text" />
+    </div>
+    <div class="form-group">
+        <input asp-for="Dob" type="text" />
+    </div>
+    <input type="submit" />
+</form>

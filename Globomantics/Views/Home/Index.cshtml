@@ -1,0 +1,150 @@
+﻿@model HomeVM
+
+@section Banner {
+    @Html.Partial("Carousel")
+}
+
+<div class="container marketing">
+    <div class="row">
+        <div class="col-md-4">
+            <h3>CD Rates</h3>
+            <p class="lead">The Longer you Save, the More You Earn</p>
+
+            @foreach (var cd in Model.CDRates)
+            {
+                <div class="meter">
+                    <p>@cd.Title</p>
+                    <div class="progress">
+                        @if (cd.TermLength == CDTermLength.Months12)
+                        {
+                            <div class="progress-bar bg-info" style="width: 50%">@cd.Value%</div>
+                        }
+                        else if (cd.TermLength == CDTermLength.Months18)
+                        {
+                            <div class="progress-bar bg-info" style="width: 75%">@cd.Value%</div>
+                        }
+                        else if (cd.TermLength == CDTermLength.Months24)
+                        {
+                            <div class="progress-bar bg-info" style="width: 100%">@cd.Value%</div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Mortgage Rates</h3>
+                    <p class="card-text">The lowest rates - guaranteed.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    @foreach (var mortRate in Model.MortgageRates)
+                    {
+                        <li class="list-group-item">@mortRate.Title: @mortRate.Value%</li>
+                    }
+                </ul>
+                <div class="card-body">
+                    <p>Yes, we do 0% down mortgages.</p>
+                    <a href="#" class="card-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Credit Card Rates</h3>
+                    <p class="card-text">The lowest rates - guaranteed.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    @foreach (var creditRate in Model.CreditCardRates)
+                    {
+                        <li class="list-group-item">@creditRate.Title: @creditRate.Value%</li>
+                    }
+                </ul>
+                <div class="card-body">
+                    <p>Learn how to get 3% back on everything.</p>
+                    <a href="#" class="card-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Retire Early</h3>
+            <div class="card mb-4 box-shadow">
+                <div style="height: 225px; width: 100%">
+                    <img class="card-img-top" style="height: auto; width: 100%; display: block;" src="~/images/small/bench.jpg" data-holder-rendered="true">
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Take that vacation you always wanted.  Learn about retirement options and planning.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Learn More</button>
+                        </div>
+                        <small class="text-muted">9 mins</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h3>Jump In</h3>
+            <div class="card mb-4 box-shadow">
+                <img class="card-img-top" style="height: auto; width: 100%; display: block;" src="~/images/small/shore.jpg" data-holder-rendered="true">
+                <div class="card-body">
+                    <p class="card-text">Open a checking account and receive $500 cash. There's never been a better time to join.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Learn More</button>
+                        </div>
+                        <small class="text-muted">9 mins</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h3>A Time to Grow</h3>
+            <div class="card mb-4 box-shadow">
+                <img class="card-img-top" style="height: auto; width: 100%; display: block;" src="~/images/small/trees.jpg" data-holder-rendered="true">
+                <div class="card-body">
+                    <p class="card-text">Don't let your money sit in savings.  Learn about our options to grow your investments.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Learn More</button>
+                        </div>
+                        <small class="text-muted">9 mins</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">Stop. <span class="text-muted">Take some time to look ahead.</span></h2>
+            <p class="lead">Finances are all about planning.  Our investors care about your future - we'll help you navigate new roads.  Learn about out personal consulting options today.</p>
+            <p class="lead">We believe in our expertise - we'll even guarantee a return.</p>
+            <button class="btn btn-primary float-right">Get Started</button>"
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto" src="~/images/stop.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Stay engaged. <span class="text-muted">Keep your finances on track.</span></h2>
+            <p class="lead">We can help you learn simple tips for staying on budget and on track for your monthly expenses.  Attend one of our seminars today!</p>
+            <button class="btn btn-primary float-right">Get Started</button>"
+        </div>
+        <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" src="~/images/small/train.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+</div>

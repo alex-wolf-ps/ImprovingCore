@@ -1,0 +1,127 @@
+﻿@section Banner{
+    <div class="jumbotron jumbotron-fluid jumbotron-green">
+        <div class="container">
+            <h1 class="display-4">Knowledge is Power</h1>
+            <p class="lead">We offer you the tools and education you need to succeed.</p>
+        </div>
+    </div>
+}
+
+<div class="col-md-12">
+    <p>We make our financial rates and data easily available to you in a variety of formats.  Choose the CSV download option if you want to work with the data in Excel.  Choose the PDF option for easy viewing and reading.</p>
+
+    <hr class="featurette-divider-thin">
+
+    <h2>Rates and Info</h2>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">CSV</th>
+                <th scope="col">PDF</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">CD Rates</th>
+                <td><a asp-action="GetCDRates" asp-controller="Document">CSV</a></td>
+                <td>PDF</td>
+            </tr>
+            <tr>
+                <th scope="row">Credit Card Rates</th>
+                <td><a asp-action="GetCreditCardRates" asp-controller="Document">CSV</a></td>
+                <td>PDF</td>
+            </tr>
+            <tr>
+                <th scope="row">Mortgage Rates</th>
+                <td><a asp-action="GetMortgageRates" asp-controller="Document">CSV</a></td>
+                <td>PDF</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <hr class="featurette-divider-thin">
+
+    <h2>Financial Seminars and Events Near You</h2>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Calendar</th>
+                <th scope="col">PDF</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Retirement Planning</th>
+                <td>Add to Calendar</td>
+                <td>PDF</td>
+            </tr>
+            <tr>
+                <th scope="row">The Globo Run</th>
+                <td>Add to Calendar</td>
+                <td>PDF</td>
+            </tr>
+            <tr>
+                <th scope="row">Managing Your Estate</th>
+                <td>Add to Calendar</td>
+                <td>PDF</td>
+            </tr>
+            <tr>
+                <th scope="row">Life Insurance Options</th>
+                <td>Add to Calendar</td>
+                <td>PDF</td>
+            </tr>
+            <tr>
+                <th scope="row">Health Insurance Seminar</th>
+                <td>Add to Calendar</td>
+                <td>PDF</td>
+            </tr>
+            <tr>
+                <th scope="row">College Financing Prep</th>
+                <td>Add to Calendar</td>
+                <td>PDF</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<hr class="featurette-divider-thin">
+
+<h2>Investment Options</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">CSV</th>
+            <th scope="col">PDF</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Guaranteed Return Plan</th>
+            <td>CSV</td>
+            <td>PDF</td>
+        </tr>
+        <tr>
+            <th scope="row">Retirement Plans</th>
+            <td>CSV</td>
+            <td>PDF</td>
+        </tr>
+        <tr>
+            <th scope="row">High Growth Funds</th>
+            <td>CSV</td>
+            <td>PDF</td>
+        </tr>
+        <tr>
+            <th scope="row">High Dividend Funds</th>
+            <td>CSV</td>
+            <td>PDF</td>
+        </tr>
+    </tbody>
+</table>

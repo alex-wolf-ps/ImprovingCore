@@ -1,0 +1,31 @@
+﻿@model AutoQuote
+
+@section Banner {
+    <div class="jumbotron jumbotron-fluid jumbotron-blue">
+        <div class="container">
+            <h1 class="display-4">Knowledge is Power</h1>
+            <p class="lead">We offer you the tools and education you need to succeed.</p>
+        </div>
+    </div>
+}
+
+@section SideNav {
+    <p class="lead">Loan Application Progress</p>
+    <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action" disabled>Loan Info</button>
+        <button type="button" class="list-group-item list-group-item-action" disabled>Employment Info</button>
+        <button type="button" class="list-group-item list-group-item-action active">Personal Info</button>
+        <button type="button" class="list-group-item list-group-item-action" disabled>Confirmation</button>
+    </div>
+}
+
+<h2>Personal Info</h2>
+<p>Let us know more about yourself.</p>
+<form method="post" asp-controller="Loan" asp-action="Personal">
+
+    @Html.Partial("Person")
+
+    <div class="form-group">
+        <button class="btn btn-primary float-right">Submit</button>
+    </div>
+</form>

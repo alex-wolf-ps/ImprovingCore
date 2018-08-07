@@ -1,0 +1,42 @@
+﻿@section Banner {
+    <div class="jumbotron jumbotron-fluid jumbotron-blue">
+        <div class="container">
+            <h1 class="display-4">Knowledge is Power</h1>
+            <p class="lead">We offer you the tools and education you need to succeed.</p>
+        </div>
+    </div>
+}
+
+@section SideNav {
+    @Html.Partial("LeftNav")
+}
+
+<h2>Property Insurance</h2>
+<p>You might not own the place, but you own everything in it - keep it safe.</p>
+<form>
+    <hr class="featurette-divider-thin">
+
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Property Type</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+            <option>House</option>
+            <option>Condo</option>
+            <option>Apartment</option>
+            <option>Other</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Monthly Rent</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Monthly Rent">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Number of Tenants</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Number of Tenants">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Lease Length</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Lease Length">
+    </div>
+
+    @Html.Partial("Person")
+</form>

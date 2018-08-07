@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Globomantics</title>
+
+    <environment include="dev">
+        <script src="scripts/dev-debug.js"></script>
+    </environment>
+    <link href="~/css/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap-reboot.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/carousel.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        @Html.Partial("Nav");
+    </header>
+
+    <main role="main">
+
+        @RenderSection("Banner", required: false)
+
+        <div class="container marketing">
+            @if (IsSectionDefined("SideNav"))
+            {
+                <div class="row">
+                    <div class="col-md-4">
+                        @RenderSection("SideNav", required: false)
+                    </div>
+                    <div class="col-md-8">
+                        @RenderBody()
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="row">
+                    <div class="col-md-12">
+                        @RenderBody()
+                    </div>
+                </div>
+            }
+
+        </div>
+        <!-- FOOTER -->
+        <footer class="container" style="margin-top: 50px">
+            <p class="float-right"><a href="#">Back to top</a></p>
+            <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer>
+    </main>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    @*<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>*@
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/holder.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/site.js"></script>
+
+    @RenderSection("Scripts", required: false)
+
+
+</body>
+</html>

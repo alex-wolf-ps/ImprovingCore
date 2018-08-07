@@ -1,0 +1,51 @@
+﻿@model AutoQuote
+
+@section Banner {
+    <div class="jumbotron jumbotron-fluid jumbotron-green">
+        <div class="container">
+            <h1 class="display-4">Auto Insurance</h1>
+            <p class="lead">With accident forgiveness and the lowest rates around, your checking account is as safe as you.</p>
+        </div>
+    </div>
+}
+
+@section SideNav {
+    @Html.Partial("LeftNav")
+}
+
+<p>After you complete this form you should receive an email with your quote shortly after. Please allow up to 1 hour to receive your quote.</p>
+    <hr class="featurette-divider-thin">
+<form asp-controller="Auto" asp-action="Index">
+    <div class="form-group">
+        <label asp-for="Make">Vehicle Make</label>
+        <select asp-for="Make" class="form-control">
+            <option>Brand 1</option>
+            <option>Brand 2</option>
+            <option>Brand 3</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="Year">Vehicle Year</label>
+        <input asp-for="Year" type="text" class="form-control" placeholder="Year">
+    </div>
+    <div class="form-group">
+        <label asp-for="Price">Purchase Price</label>
+        <input asp-for="Price" type="text" class="form-control" placeholder="Price">
+    </div>
+    <div class="form-group">
+        <label asp-for="Type">Vehicle Type</label>
+        <select asp-for="Type" class="form-control">
+            <option>Sedan</option>
+            <option>SUV</option>
+            <option>Crossover</option>
+            <option>Truck</option>
+            <option>RV</option>
+        </select>
+    </div>
+
+    @Html.Partial("Person")
+
+    <div class="form-group">
+        <button class="btn btn-primary float-right">Submit</button>
+    </div>
+</form>
