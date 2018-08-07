@@ -12,7 +12,7 @@ namespace Globomantics.Models
         public string Type { get; set; }
 
         [Required]
-        public double? Amount { get; set; }
+        public double Amount { get; set; }
 
         [Required]
         public int TermLength { get; set; }

@@ -28,13 +28,9 @@ namespace Globomantics.Controllers
         [HttpPost]
         public IActionResult Application(LoanDetails app)
         {
-            if (ModelState.IsValid)
-            {
-                loanService.CreateLoanApplication(app, Guid.NewGuid().ToString());
-                return RedirectToAction("Employment");
-            }
+            loanService.CreateLoanApplication(app, Guid.NewGuid().ToString());
 
-            return View(app);
+            return RedirectToAction("Employment");
         }
 
         [HttpGet]
@@ -64,8 +60,7 @@ namespace Globomantics.Controllers
         [HttpPost]
         public IActionResult Personal(Person person)
         {
-            if (ModelState.IsValid)
-            {
+            if (ModelState.IsValid) {
                 loanService.UpdateLoanPersonalInfo(person);
                 return RedirectToAction("Confirmation");
             }
