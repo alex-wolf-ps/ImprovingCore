@@ -9,7 +9,7 @@ namespace Globomantics.Controllers
     public class PromotionController : Controller
     {
         [HttpGet]
-        [Route("promotion/{token}")]
+        [Route("promotion/{token:tokenCheck}")]
         public IActionResult Index()
         {
             return View();
@@ -17,7 +17,7 @@ namespace Globomantics.Controllers
 
         [HttpPost]
         [Route("promotion")]
-        public IActionResult Submit(int id)
+        public IActionResult Submit()
         {
             // TODO: Sweepstakes entry logic
             return View();

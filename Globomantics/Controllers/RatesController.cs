@@ -11,7 +11,6 @@ using Globomantics.Filters;
 namespace Globomantics.Controllers
 {
     [RateExceptionFilter]
-    [Route("api/[controller]")]
     public class RatesController : Controller
     {
         private IRateService rateService;
@@ -22,14 +21,15 @@ namespace Globomantics.Controllers
         }
 
         [HttpGet]
-        [Route("/mortgage")]
+        [Route("api/rates/mortgage")]
+        [Route("api/{version:versionCheck(1)}/rates/mortgage")]
         public IActionResult GetMortgageRates()
         {
             return Ok(rateService.GetMortgageRates());
         }
 
         [HttpGet]
-        [Route("/mortgage")]
+        [Route("api/{version:versionCheck(2)}/rates/mortgage")]
         public IActionResult GetMortgageRatesV2()
         {
             return Ok(rateService.GetMortgageRateDetails());

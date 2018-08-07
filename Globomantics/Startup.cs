@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Globomantics.Binders;
+using Globomantics.Constraints;
 using Globomantics.Filters;
 using Globomantics.Services;
 using Globomantics.Theme;
@@ -41,6 +42,11 @@ namespace Globomantics
             services.Configure<IConfiguration>(Configuration);
             services.Configure<RazorViewEngineOptions>(
                 options => options.ViewLocationExpanders.Add(new ThemeExpander())
+            );
+            services.Configure<RouteOptions>(options => {
+                options.ConstraintMap.Add("tokenCheck", typeof(TokenConstraint));
+                options.ConstraintMap.Add("versionCheck", typeof(VersionConstraint));
+                }
             );
 
             services.AddDistributedMemoryCache();
