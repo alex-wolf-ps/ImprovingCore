@@ -8,8 +8,8 @@ namespace Globomantics.Models
     public class AutoQuote : Person
     {
         public string Make { get; set; }
-        public string Year { get; set; }
-        public string Price { get; set; }
+        public double Year { get; set; }
+        public double Price { get; set; }
         public string Type { get; set; }
     }
 }

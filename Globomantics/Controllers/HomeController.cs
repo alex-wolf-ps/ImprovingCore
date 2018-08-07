@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Globomantics.Models;
 using Globomantics.Services;
 using Globomantics.Core.Models;
+using Globomantics.Constraints;
 
 namespace Globomantics.Controllers
 {
@@ -19,28 +20,18 @@ namespace Globomantics.Controllers
             this.rateService = rateService;
         }
 
+        [Route("")]
+        [Route("home/index")]
         public IActionResult Index()
         {
-            var homeData = new HomeVM();
-
-            homeData.CDRates = rateService.GetCDRates();
-            homeData.CreditCardRates = rateService.GetCreditCardRates();
-            homeData.MortgageRates = rateService.GetMortgageRates();
-
-            return View(homeData);
-        }
-
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
             return View();
         }
 
-        public IActionResult Contact()
+        [MobileSelector]
+        [Route("")]
+        [Route("home/index")]
+        public IActionResult MobileIndex()
         {
-            ViewData["Message"] = "Your contact page.";
-
             return View();
         }
 

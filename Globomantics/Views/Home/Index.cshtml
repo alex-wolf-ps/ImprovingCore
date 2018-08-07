@@ -1,6 +1,4 @@
-﻿@model HomeVM
-
-@section Banner {
+﻿@section Banner {
     @Html.Partial("Carousel")
 }
 
@@ -9,63 +7,19 @@
         <div class="col-md-4">
             <h3>CD Rates</h3>
             <p class="lead">The Longer you Save, the More You Earn</p>
-
-            @foreach (var cd in Model.CDRates)
-            {
-                <div class="meter">
-                    <p>@cd.Title</p>
-                    <div class="progress">
-                        @if (cd.TermLength == CDTermLength.Months12)
-                        {
-                            <div class="progress-bar bg-info" style="width: 50%">@cd.Value%</div>
-                        }
-                        else if (cd.TermLength == CDTermLength.Months18)
-                        {
-                            <div class="progress-bar bg-info" style="width: 75%">@cd.Value%</div>
-                        }
-                        else if (cd.TermLength == CDTermLength.Months24)
-                        {
-                            <div class="progress-bar bg-info" style="width: 100%">@cd.Value%</div>
-                        }
-                    </div>
-                </div>
-            }
+            <cdrate title="12 Month CD" term-length="Months12" meter-percent="50"></cdrate>
+            <cdrate title="18 Month CD" term-length="Months18" meter-percent="75"></cdrate>
+            <cdrate title="24 Month CD" term-length="Months24" meter-percent="100"></cdrate>
         </div>
         <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">Mortgage Rates</h3>
-                    <p class="card-text">The lowest rates - guaranteed.</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    @foreach (var mortRate in Model.MortgageRates)
-                    {
-                        <li class="list-group-item">@mortRate.Title: @mortRate.Value%</li>
-                    }
-                </ul>
-                <div class="card-body">
-                    <p>Yes, we do 0% down mortgages.</p>
-                    <a href="#" class="card-link">Learn More</a>
-                </div>
-            </div>
+            @await  Component.InvokeAsync("MortgageRates")
         </div>
         <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">Credit Card Rates</h3>
-                    <p class="card-text">The lowest rates - guaranteed.</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    @foreach (var creditRate in Model.CreditCardRates)
-                    {
-                        <li class="list-group-item">@creditRate.Title: @creditRate.Value%</li>
-                    }
-                </ul>
-                <div class="card-body">
-                    <p>Learn how to get 3% back on everything.</p>
-                    <a href="#" class="card-link">Learn More</a>
-                </div>
-            </div>
+            @await  Component.InvokeAsync("CreditCardRates",
+               new {
+                   title = "Credit Card Rates",
+                   subtitle = "The best rates around."
+               })
         </div>
     </div>
 

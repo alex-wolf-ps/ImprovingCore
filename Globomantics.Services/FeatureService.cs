@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Hosting;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -7,17 +10,23 @@ namespace Globomantics.Services
 {
     public class FeatureService : IFeatureService
     {
-        private Dictionary<string, bool> featureStates = new Dictionary<string, bool>()
+        private IHostingEnvironment _hostingEnvironment;
+
+        private Dictionary<string, bool> featureStates = new Dictionary<string, bool>();
+
+        public FeatureService(IHostingEnvironment environment)
         {
-            { "Quotes", true },
-            { "Loans", true },
-            { "Resources", true },
-            { "BusinessServices", true}
-        };
+            this._hostingEnvironment = environment;
+            var path = Path.Combine(_hostingEnvironment.WebRootPath, "features.json");
+
+            this.featureStates = 
+                JsonConvert.DeserializeObject<Dictionary<string, bool>>
+                (File.ReadAllText(path));
+        }
 
         public bool IsFeatureActive(string featureName)
         {
-            return featureStates.FirstOrDefault(x => x.Key == featureName).Value;
+            return featureStates[featureName];
         }
     }
 }
