@@ -37,7 +37,7 @@ namespace Globomantics.Controllers
                 var properties = rate.GetType().GetProperties();
                 foreach (var prop in properties)
                 {
-                    stringWriter.Write(GetValue(rate, prop.Name));
+                    stringWriter.Write(FindPropertyValue(rate, prop.Name));
                     stringWriter.Write(", ");
                 }
                 stringWriter.WriteLine();
@@ -50,17 +50,17 @@ namespace Globomantics.Controllers
 
         public IActionResult GetMortgageRates()
         {
-            var cdRates = rateService.GetCDRates();
+            var mortgageRates = rateService.GetMortgageRates();
 
             var builder = new StringBuilder();
             var stringWriter = new StringWriter(builder);
 
-            foreach (var rate in cdRates)
+            foreach (var rate in mortgageRates)
             {
                 var properties = rate.GetType().GetProperties();
                 foreach (var prop in properties)
                 {
-                    stringWriter.Write(GetValue(rate, prop.Name));
+                    stringWriter.Write(FindPropertyValue(rate, prop.Name));
                     stringWriter.Write(", ");
                 }
                 stringWriter.WriteLine();
@@ -71,17 +71,17 @@ namespace Globomantics.Controllers
 
         public IActionResult GetCreditCardRates()
         {
-            var cdRates = rateService.GetCreditCardRates();
+            var creditRates = rateService.GetCreditCardRates();
 
             var builder = new StringBuilder();
             var stringWriter = new StringWriter(builder);
 
-            foreach (var rate in cdRates)
+            foreach (var rate in creditRates)
             {
                 var properties = rate.GetType().GetProperties();
                 foreach (var prop in properties)
                 {
-                    stringWriter.Write(GetValue(rate, prop.Name));
+                    stringWriter.Write(FindPropertyValue(rate, prop.Name));
                     stringWriter.Write(", ");
                 }
                 stringWriter.WriteLine();
@@ -90,7 +90,7 @@ namespace Globomantics.Controllers
             return new FileContentResult(Encoding.ASCII.GetBytes(stringWriter.ToString()), "text/csv") { FileDownloadName = "CreditCardRates.csv" };
         }
 
-        public static string GetValue(object item, string propName)
+        public static string FindPropertyValue(object item, string propName)
         {
             return item.GetType().GetProperty(propName).GetValue(item, null).ToString() ?? "";
         }

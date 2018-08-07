@@ -24,6 +24,8 @@
     <form method="post" asp-controller="Loan" asp-action="Application">
         <hr class="featurette-divider-thin">
 
+        @Html.ValidationSummary()
+
         <div class="form-group">
             <label asp-for="Type">Loan Type</label>
             <select asp-for="Type" class="form-control">
@@ -35,7 +37,7 @@
         <div class="form-group">
             <label asp-validation-for="Amount" asp-for="Amount">Loan Amount</label>
             <input asp-for="Amount" type="text" class="form-control" placeholder="Loan Amount">
-            <span asp-validation-for="Amount" class="text-danger"></span>
+            <span asp-validation-for="Amount"></span>
         </div>
         <div class="form-group">
             <label asp-for="TermLength">Desired Term Length (Months)</label>

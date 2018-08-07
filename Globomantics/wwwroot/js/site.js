@@ -2,13 +2,19 @@
 
 $(document).ready(function () {
 
+    toggleUi();
+
     $('#employmentLength').change(function () {
-        var $option = $(this).find('option:selected');
-        if ($option.val() < 3) {
-            $('#previousEmployment').slideToggle();
-        } else {
-            $('#previousEmployment').slideToggle();
-        }
+        toggleUi();
     });
+
+    function toggleUi() {
+        var $option = $('#employmentLength');
+        if ($option.val() < 3) {
+            $('#previousEmployment').slideDown();
+        } else {
+            $('#previousEmployment').slideUp();
+        }
+    }
 
 })
