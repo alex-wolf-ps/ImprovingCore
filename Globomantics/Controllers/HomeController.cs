@@ -21,14 +21,7 @@ namespace Globomantics.Controllers
 
         public IActionResult Index()
         {
-            var home = new HomeVM()
-            {
-                MortgageRates = rateService.GetMortgageRates(),
-                CDRates = rateService.GetCDRates(),
-                CreditCardRates = rateService.GetCreditCardRates()
-            };
-
-            return View(home);
+            return View();
         }
 
         public IActionResult About()

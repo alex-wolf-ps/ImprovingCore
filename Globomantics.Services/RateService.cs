@@ -8,6 +8,11 @@ namespace Globomantics.Services
 {
     public class RateService : IRateService
     {
+        public List<Rate> GetAutoLoanRates()
+        {
+            throw new TimeoutException();
+        }
+
         public List<Rate> GetMortgageRates()
         {
             return new List<Rate>()

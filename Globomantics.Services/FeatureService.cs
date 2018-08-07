@@ -26,7 +26,7 @@ namespace Globomantics.Services
 
         public bool IsFeatureActive(string featureName)
         {
-            return featureStates.FirstOrDefault(x => x.Key == featureName).Value;
+            return featureStates[featureName];
         }
     }
 }
