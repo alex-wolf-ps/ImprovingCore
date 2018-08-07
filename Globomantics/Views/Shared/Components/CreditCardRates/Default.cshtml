@@ -1,0 +1,18 @@
+﻿@model CreditCardWidgetVM
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">@Model.WidgetTitle</h3>
+        <p class="card-text">@Model.WidgetSubTitle</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        @foreach (var creditRate in Model.Rates)
+        {
+            <li class="list-group-item">@creditRate.Title: @creditRate.Value%</li>
+        }
+    </ul>
+    <div class="card-body">
+        <p>Learn how to get 3% back on everything.</p>
+        <a href="#" class="card-link">Learn More</a>
+    </div>
+</div>
