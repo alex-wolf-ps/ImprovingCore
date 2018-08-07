@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Globomantics.Binders;
 using Globomantics.Filters;
 using Globomantics.Services;
+using Globomantics.Theme;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Razor;
@@ -36,6 +37,10 @@ namespace Globomantics
             services.AddScoped<IQuoteService, QuoteService>();
             services.AddScoped<IFeatureService, FeatureService>();
             services.AddScoped<IRateService, RateService>();
+            services.Configure<IConfiguration>(Configuration);
+            services.Configure<RazorViewEngineOptions>(
+                options => options.ViewLocationExpanders.Add(new ThemeExpander())
+            );
 
             services.AddDistributedMemoryCache();
             services.AddSession(options =>
