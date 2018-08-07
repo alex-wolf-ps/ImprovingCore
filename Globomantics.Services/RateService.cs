@@ -8,6 +8,11 @@ namespace Globomantics.Services
 {
     public class RateService : IRateService
     {
+        public List<Rate> GetAutoLoanRates()
+        {
+            throw new TimeoutException();
+        }
+
         public List<Rate> GetMortgageRates()
         {
             return new List<Rate>()
@@ -15,6 +20,37 @@ namespace Globomantics.Services
                 new Rate { Title = "10 Year", Value = 3.5, Type = RateType.Mortgage },
                 new Rate { Title = "15 Year", Value = 4.0, Type = RateType.Mortgage },
                 new Rate { Title = "30 Year", Value = 4.5, Type = RateType.Mortgage }
+            };
+        }
+
+        public List<MortgageRateDetails> GetMortgageRateDetails()
+        {
+            return new List<MortgageRateDetails>()
+            {
+                new MortgageRateDetails
+                {
+                    InterestRate = 3,
+                    IsFixed = false,
+                    PointsAvailable = 5,
+                    ProductName = "First Time Buyer",
+                    YearTermLength = 30
+                },
+                new MortgageRateDetails
+                {
+                    InterestRate = 2.5,
+                    IsFixed = true,
+                    PointsAvailable = 3,
+                    ProductName = "Stable Planning",
+                    YearTermLength = 15
+                },
+                new MortgageRateDetails
+                {
+                    InterestRate = 2.2,
+                    IsFixed = false,
+                    PointsAvailable = 2,
+                    ProductName = "Quick Payoff",
+                    YearTermLength = 30
+                }
             };
         }
 
@@ -34,8 +70,7 @@ namespace Globomantics.Services
             {
                 new CDRate() { TermLength = CDTermLength.Months12, Title = "12 Months", Value = 1, Type = RateType.CD },
                 new CDRate() { TermLength = CDTermLength.Months18, Title = "18 Months", Value = 1.5, Type = RateType.CD },
-                new CDRate() { TermLength = CDTermLength.Months24, Title = "24 Months", Value = 2, Type = RateType.CD },
-                new CDRate() { TermLength = CDTermLength.Months36, Title = "36 Months", Value = 2.5, Type = RateType.CD }
+                new CDRate() { TermLength = CDTermLength.Months24, Title = "24 Months", Value = 2, Type = RateType.CD }
             };
         }
 

@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Globomantics.Models;
 using Globomantics.Services;
+using Globomantics.Filters;
 
 namespace Globomantics.Controllers
 {
+    [RateExceptionFilter]
     [Route("api/[controller]")]
     public class RatesController : Controller
     {
@@ -20,14 +22,28 @@ namespace Globomantics.Controllers
         }
 
         [HttpGet]
-        [Route("mortgage")]
+        [Route("/mortgage")]
         public IActionResult GetMortgageRates()
         {
             return Ok(rateService.GetMortgageRates());
         }
 
         [HttpGet]
-        [Route("credit")]
+        [Route("/mortgage")]
+        public IActionResult GetMortgageRatesV2()
+        {
+            return Ok(rateService.GetMortgageRateDetails());
+        }
+
+        [HttpGet]
+        [Route("autoloan")]
+        public IActionResult GetAutoLoanRates()
+        {
+            return Ok(rateService.GetAutoLoanRates());
+        }
+
+        [HttpGet]
+        [Route("creditcard")]
         public IActionResult GetCreditCardRates()
         {
             return Ok(rateService.GetCreditCardRates());

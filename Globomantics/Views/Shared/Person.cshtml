@@ -2,24 +2,26 @@
 
 <hr class="featurette-divider-thin">
 
+@Html.ValidationSummary()
+
 <div class="form-group">
-    <label for="exampleFormControlInput1">First Name</label>
+    <label for="FirstName">First Name</label>
     <input asp-for="FirstName" type="text" class="form-control" placeholder="First Name">
 </div>
 <div class="form-group">
-    <label for="exampleFormControlInput1">Last Name</label>
+    <label for="LastName">Last Name</label>
     <input asp-for="LastName" type="text" class="form-control" placeholder="Last Name">
 </div>
 <div class="form-group">
-    <label for="exampleFormControlInput1">Date of Birth</label>
+    <label for="Dob">Date of Birth</label>
     <input asp-for="Dob" type="text" class="form-control" placeholder="Date of Birth">
 </div>
 <div class="form-group">
-    <label for="exampleFormControlInput1">Email</label>
+    <label for="Email">Email</label>
     <input asp-for="Email" type="text" class="form-control" placeholder="Email">
 </div>
 <div class="form-group">
-    <label for="exampleFormControlInput1">Phone</label>
+    <label for="Phone">Phone</label>
     <input asp-for="Phone" type="text" class="form-control" placeholder="Phone">
 </div>
 
@@ -30,14 +32,18 @@
     <input asp-for="Street" type="text" class="form-control" placeholder="Address">
 </div>
 <div class="form-group">
-    <label for="exampleFormControlInput1">City</label>
+    <label for="City">City</label>
     <input asp-for="City" type="text" class="form-control" placeholder="City">
 </div>
 <div class="form-group">
-    <label for="exampleFormControlInput1">State</label>
+    <label for="State">State</label>
     <input asp-for="State" type="text" class="form-control" placeholder="State">
 </div>
 <div class="form-group">
-    <label for="exampleFormControlInput1">Zip</label>
+    <label for="Zip">Zip</label>
     <input asp-for="Zip" type="text" class="form-control" placeholder="Zip">
+</div>
+<div class="form-group">
+    <label for="Country">Country</label>
+    <input asp-for="Country" type="text" class="form-control" placeholder="Country">
 </div>

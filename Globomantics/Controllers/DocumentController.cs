@@ -8,6 +8,7 @@ using Globomantics.Models;
 using Globomantics.Services;
 using System.Text;
 using System.IO;
+using Globomantics.ActionResults;
 
 namespace Globomantics.Controllers
 {
@@ -29,70 +30,21 @@ namespace Globomantics.Controllers
         {
             var cdRates = rateService.GetCDRates();
 
-            var builder = new StringBuilder();
-            var stringWriter = new StringWriter(builder);
-
-            foreach (var rate in cdRates)
-            {
-                var properties = rate.GetType().GetProperties();
-                foreach (var prop in properties)
-                {
-                    stringWriter.Write(GetValue(rate, prop.Name));
-                    stringWriter.Write(", ");
-                }
-                stringWriter.WriteLine();
-            }
-
-            return new FileContentResult(
-                Encoding.ASCII.GetBytes(stringWriter.ToString()), "text/csv")
-                { FileDownloadName = "CDRates.csv" };
+            return new CsvResult(cdRates, "CD Rates");
         }
 
         public IActionResult GetMortgageRates()
         {
-            var cdRates = rateService.GetCDRates();
+            var mortRates = rateService.GetMortgageRates();
 
-            var builder = new StringBuilder();
-            var stringWriter = new StringWriter(builder);
-
-            foreach (var rate in cdRates)
-            {
-                var properties = rate.GetType().GetProperties();
-                foreach (var prop in properties)
-                {
-                    stringWriter.Write(GetValue(rate, prop.Name));
-                    stringWriter.Write(", ");
-                }
-                stringWriter.WriteLine();
-            }
-
-            return new FileContentResult(Encoding.ASCII.GetBytes(stringWriter.ToString()), "text/csv") { FileDownloadName = "MortgageRates.csv" };
+            return new CsvResult(mortRates, "Mortgage Rates");
         }
 
         public IActionResult GetCreditCardRates()
         {
-            var cdRates = rateService.GetCreditCardRates();
+            var creditRates = rateService.GetCreditCardRates();
 
-            var builder = new StringBuilder();
-            var stringWriter = new StringWriter(builder);
-
-            foreach (var rate in cdRates)
-            {
-                var properties = rate.GetType().GetProperties();
-                foreach (var prop in properties)
-                {
-                    stringWriter.Write(GetValue(rate, prop.Name));
-                    stringWriter.Write(", ");
-                }
-                stringWriter.WriteLine();
-            }
-
-            return new FileContentResult(Encoding.ASCII.GetBytes(stringWriter.ToString()), "text/csv") { FileDownloadName = "CreditCardRates.csv" };
-        }
-
-        public static string GetValue(object item, string propName)
-        {
-            return item.GetType().GetProperty(propName).GetValue(item, null).ToString() ?? "";
+            return new CsvResult(creditRates, "Credit Rates");
         }
     }
 }
